@@ -1,0 +1,10 @@
+"use strict";
+exports.__esModule = true;
+var Validator_1 = require("./Validator/Validator");
+var Email = 'Zalakthakor807@gmail.com';
+var ZCode = '38218';
+var V = new Validator_1.ValidatorCLS();
+var ROfEV = V.isValidEmailStr(Email);
+var ROfZV = V.isValidZipCode(ZCode);
+console.log("Vallid Email or Not=" + ROfEV);
+console.log("Valid Zip code Or Not=" + ROfZV);
