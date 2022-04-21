@@ -1,0 +1,121 @@
+{"item":[
+  {
+    "id": 1,
+    "title": "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
+    "price": 109.95,
+    "description": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
+    "category": "fashion",
+    "image": "https://www.77onlineshop.eu/$WS/77onlineshop/websale8_shop-77onlineshop/produkte/medien/bilder/normal/20063137.jpg",
+    "rating": {
+      "rate": 3.9,
+      "count": 120
+    }
+  },
+  {
+    "id": 2,
+    "title": "The 40 best gadgets of 2017 | Gadgets | The Guardian ",
+    "price": 22.3,
+    "description": "Slim-fitting style, contrast raglan long sleeve, three-button henley placket, light weight & soft fabric for breathable and comfortable wearing. And Solid stitched shirts with round neck made for durability and a great fit for casual fashion wear and diehard baseball fans. The Henley style round neckline includes a three-button placket.",
+    "category": "electronics",
+    "image": "https://i.guim.co.uk/img/media/8603a0c68471975b4672a9711a8627ac211a6919/410_458_5134_3080/master/5134.jpg?width=700&quality=85&auto=format&fit=max&s=7d9da67bbe5f3490b2db8a0cdac2c776",
+    "rating": {
+      "rate": 4.1,
+      "count": 259
+    }},
+    {
+      "id": 3,
+      "title": "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
+      "price": 109.95,
+      "description": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
+      "category": "fashion",
+      "image": "https://images.beautifulhalo.com/images/392x588/202101/B/stylish-womens-shirt-plaid-pattern-button-design-spread-collar-asymmetrical-hem-long-sleeves-relaxed-fit-shirt-blouse_1611030543885.jpg",
+      "rating": {
+        "rate": 3.9,
+        "count": 120
+      }
+    },
+    {
+      "id": 4,
+      "title": "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
+      "price": 109.95,
+      "description": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
+      "category": "fashion",
+      "image": "https://i.pinimg.com/736x/1d/9c/3a/1d9c3a3ffb3cc56332e3e2e76569529c.jpg",
+      "rating": {
+        "rate": 3.9,
+        "count": 120
+      }
+    },
+    {
+      "id": 5,
+      "title": "Best Electronic Gadgets",
+      "price": 109.95,
+      "description": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
+      "category": "electronics",
+      "image": "https://m.media-amazon.com/images/I/61EXU8BuGZL._AC_UY218_.jpg",
+      "rating": {
+        "rate": 3.9,
+        "count": 120
+      }
+    },
+    {
+      "id": 6,
+      "title": "Best Watch Electronic Gadgets",
+      "price": 109.95,
+      "description": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
+      "category": "electronics",
+      "image": "https://techsive.com/wp-content/uploads/2019/08/top-amazon-gadgets-cool-tech-alexa-enabled.jpg",
+      "rating": {
+        "rate": 3.9,
+        "count": 120
+      }
+    },
+    {
+      "id": 7,
+      "title": "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
+      "price": 109.95,
+      "description": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
+      "category": "jewelery",
+      "image": "https://assets.damasjewellery.com/media/ktpl/hero/mobile/Mobile_Banner_Eng.jpg",
+      "rating": {
+        "rate": 3.9,
+        "count": 120
+      }
+    },
+    {
+      "id": 8,
+      "title": "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
+      "price": 109.95,
+      "description": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
+      "category": "jewelery",
+      "image": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcSut35wV_MS_-G7VwgFPuXzMjdcMnEaa_3VnP46H1dW4kPjMiwkb9yPOR227W6OPdHFYVyYK1rt-51WCzaIe9tlkpnc_EC_&usqp=CAY",
+      "rating": {
+        "rate": 3.9,
+        "count": 120
+      }
+    },
+    {
+      "id": 9,
+      "title": "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
+      "price": 109.95,
+      "description": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
+      "category": "jewelery",
+      "image": "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcSa3EFx7AOoIZkoIR2N9H14lh47RzvqOwBpIB_UCdAD4-Q1vWdydRQ5FYckN6bN99CF4oAuY9KcmQU_7SHqXIVxHVQujcXlGw&usqp=CAY",
+      "rating": {
+        "rate": 3.9,
+        "count": 120
+      }
+    },
+    {
+      "id": 10,
+      "title": "Women Clothes",
+      "price": 109.95,
+      "description": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
+      "category": "fashion",
+      "image": "https://assets.ajio.com/medias/sys_master/root/20210420/R70k/607ecc5baeb269a9e3972063/dennislingo_premium_attire_green_full_sleeves_slim_fit_shirt.jpg",
+      "rating": {
+        "rate": 3.9,
+        "count": 120
+      }
+    }
+    ]}
