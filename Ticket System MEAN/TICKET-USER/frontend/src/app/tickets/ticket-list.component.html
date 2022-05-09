@@ -1,0 +1,124 @@
+<style>
+    #exampleModal{
+        background-color:rgb(8, 54, 93);
+        
+    } 
+    .modal-content{
+        
+        border-radius:4rem;
+        box-shadow:5px 5px 5px 5px blue;
+    }
+    #Add{
+        border-radius: 5rem;
+        width:200px;
+        background-color:rgb(18, 79, 202);
+            
+    }
+</style>
+<h1>Tickets</h1>
+<!-- <a routerLink="create" class="btn btn-sm btn-success mb-2" data-toggle="modal" data-target="#exampleModal">Add Ticket</a> -->
+<div class="row">
+    <div class="search-hero">
+      <input class="form-control" type="text" name="search"  autocomplete="off" placeholder="&#61442; Search Here"  [(ngModel)]="searchText">
+    </div>
+</div>
+<!-- Button trigger modal -->
+<a class="btn btn-sm btn-success mb-2" data-bs-toggle="modal" data-bs-target="#exampleModal" id="Add" >Add Ticket</a>
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel" >Add Ticket</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <form [formGroup]="form" (ngSubmit)="onSubmit()">
+                <div class="form-group">
+                    <label for="ticket_no">Ticket No</label>
+                    <input type="text" formControlName="ticket_no" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.ticket_no.errors }" />
+                    <div *ngIf="submitted && f.ticket_no.errors" class="invalid-feedback">
+                        <div *ngIf="f.ticket_no.errors.required">Enter Ticket No </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="ticket_desc">Ticket Description</label>
+                    <input type="text" formControlName="ticket_desc" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.ticket_desc.errors }" />
+                    <div *ngIf="submitted && f.ticket_desc.errors" class="invalid-feedback">
+                        <div *ngIf="f.ticket_desc.errors.required">Enter Description </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="username">username</label>
+                    <input type="text" formControlName="username" value="{{user.username}}" disabled/>  
+                    <!-- <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
+                        <div *ngIf="f.username.errors.required">Enter Description </div>
+                    </div>               -->
+                </div>
+            </form>
+        </div>
+        <div class="modal-footer">
+          <!-- <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button> -->
+          <div class="form-group">
+                    <button (click)="onSubmit()" class="btn btn-primary" data-bs-dismiss="modal" style="margin-right: 8px;" id="Add">Save</button>
+                    <a routerLink="/tickets" class="btn btn-secondary" data-bs-dismiss="modal" id="Add"> Close</a>
+                </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<!-- <a routerLink="add" class="btn btn-sm btn-success mb-2">Add User</a> -->
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th style="width: 30%">Index</th>
+            <th style="width: 30%">Ticket No</th>
+            <th style="width: 30%">Ticket description</th>
+            <th style="width: 30%">Updated Date</th>
+
+            <!-- <th style="width: 30%">Username</th> -->
+            
+            <th style="width: 10%"></th>
+        </tr>
+    </thead>
+    <tbody>
+        <!-- <tr *ngFor="let ticket of tickets"> -->
+            <!-- <td>{{ticket.ticket_id}}</td> -->
+            <tr *ngFor="let ticket of tickets | filter:searchText | paginate : {
+                itemsPerPage: tableSize,
+                currentPage: page,
+                totalItems: count
+              }; 
+        let i = index" [class.active]="i == currentIndex" [ngClass]="{'data-selected':deleteList.includes(ticket.ticket_id)}" >    
+            <td>{{ticket.ticket_id}}</td>
+            <td>{{ticket.ticket_no}}</td>
+            <td>{{ticket.ticket_desc}}</td>
+            <td>{{ticket.updated_at}}</td>
+            <td style="white-space: nowrap">
+                <button routerLink="edit/{{ticket.id}}" id="update" class="btn btn-sm btn-primary mr-1" [disabled]="ticket.username!==user.username">Edit
+                    <!-- <span *ngIf="ticket.username===user.username" class="spinner-border spinner-border-sm"  [disabled]="!ticket.isDeleting"></span> -->
+
+                </button>
+                <button (click)="deleteTicket(ticket.id)"  class="btn btn-sm btn-primary mr-1" [disabled]="ticket.username!==user.username">Delete
+                    <!-- <span *ngIf="ticket.isDeleting" class="spinner-border spinner-border-sm"></span>  -->
+                    <!-- <span>Delete</span> -->
+                </button>
+            </td>
+        </tr>
+        <tr *ngIf="!tickets">
+            <td colspan="4" class="text-center">
+                <span class="spinner-border spinner-border-lg align-center"></span>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<div class="d-flex justify-content-center">
+    <pagination-controls 
+      responsive="true" 
+      previousLabel="Prev" 
+      nextLabel="Next" 
+      (pageChange)="onTableDataChange($event)">
+    </pagination-controls>
+  </div>

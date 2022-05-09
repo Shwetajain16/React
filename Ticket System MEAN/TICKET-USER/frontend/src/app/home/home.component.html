@@ -1,0 +1,63 @@
+﻿<!-- <div class="p-4">
+    <div class="container">
+        <h1>Hi {{user.firstName}}!</h1>
+        <p><a routerLink="/users">Manage Users</a></p>
+    </div>
+</div> -->
+<style>
+
+ 
+</style>
+
+<div class="p-4">
+<div class="container">
+<h1></h1>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th style="width: 30%">Index</th>
+            <th style="width: 30%">Ticket No</th>
+            <th style="width: 30%">Ticket description</th>
+            <th style="width: 30%">Updated Date</th>
+            <th style="width: 30%">Username</th> 
+            <th style="width: 10%"></th>
+        </tr>
+    </thead>
+    <tbody>
+        <!-- <tr *ngFor="let ticket of tickets"> -->
+            <!-- <td>{{ticket.ticket_id}}</td> -->
+            <tr *ngFor="let ticket of tickets | paginate : {
+                itemsPerPage: tableSize,
+                currentPage: page,
+                totalItems: count
+              }; 
+        let i = index" [class.active]="i == currentIndex">   
+            <td>{{ticket.ticket_id}}</td>
+            <td>{{ticket.ticket_no}}</td>
+            <td>{{ticket.ticket_desc}}</td>
+            <td>{{ticket.updated_at}}</td>
+            
+            <td>{{ticket.username}}</td>
+
+            <td style="white-space: nowrap">
+                
+            </td>
+        </tr>
+        <tr *ngIf="!tickets">
+            <td colspan="4" class="text-center">
+                <span class="spinner-border spinner-border-lg align-center"></span>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<div class="d-flex justify-content-center">
+    <pagination-controls 
+      responsive="true" 
+      previousLabel="Prev" 
+      nextLabel="Next" 
+      (pageChange)="onTableDataChange($event)">
+    </pagination-controls>
+  </div>
+</div>
+</div> 

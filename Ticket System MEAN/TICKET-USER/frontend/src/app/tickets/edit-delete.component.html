@@ -1,0 +1,54 @@
+<!-- <h1 *ngIf="isAddMode">Add User</h1> -->
+<h1>Edit Ticket</h1>
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div class="form-row">
+        <div class="form-group col">
+            <label for="ticket_no">Ticket No</label>
+            <input type="text" formControlName="ticket_no" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.ticket_no.errors }" />
+            <div *ngIf="submitted && f.ticket_no.errors" class="invalid-feedback">
+                <div *ngIf="f.ticket_no.errors.required">Ticket No is required</div>
+            </div>
+        </div>
+        <div class="form-group col">
+            <label for="ticket_desc">Ticket Description</label>
+            <input type="text" formControlName="ticket_desc" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.ticket_desc.errors }" />
+            <div *ngIf="submitted && f.ticket_desc.errors" class="invalid-feedback">
+                <div *ngIf="f.ticket_desc.errors.required">Ticket Description is required</div>
+            </div>
+        </div>
+        <div class="form-group col">
+            <label for="updated_at">Updated Date</label>
+            <input type="date" formControlName="updated_at" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.updated_at.errors }" disabled/>
+            <div *ngIf="submitted && f.updated_at.errors" class="invalid-feedback">
+                <div *ngIf="f.updated_at.errors.required">Ticket Description is required</div>
+            </div>
+        </div>
+    </div>
+    <div class="form-row">
+        <!-- <div class="form-group col">
+            <label for="username">Username</label>
+            <input type="text" formControlName="username" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.username.errors }" />
+            <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
+                <div *ngIf="f.username.errors.required">Username is required</div>
+            </div>
+        </div>
+        <div class="form-group col">
+            <label for="password">
+                Password
+                <em *ngIf="!isAddMode">(Leave blank to keep the same password)</em>
+            </label>
+            <input type="password" formControlName="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
+            <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                <div *ngIf="f.password.errors.required">Password is required</div>
+                <div *ngIf="f.password.errors.minlength">Password must be at least 6 characters</div>
+            </div> -->
+        </div>
+    
+    <div class="form-group">
+        <button [disabled]="loading" class="btn btn-primary">
+            <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+            Save
+        </button>
+        <a routerLink="/tickets" class="btn btn-link">Cancel</a>
+    </div>
+</form>
