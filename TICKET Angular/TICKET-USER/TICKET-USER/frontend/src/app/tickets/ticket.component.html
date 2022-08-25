@@ -1,0 +1,62 @@
+﻿<style>
+    #exampleModal{
+        background-color:steelblue;
+        /* border-radius:2rem; */
+    } 
+    #content{
+        
+        border-radius:4rem;
+        border-color: blue; 
+    }
+</style>
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content" id="content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Create Ticket</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body" >
+            <form [formGroup]="form" (ngSubmit)="onSubmit()">
+                <!-- <div class="form-group">
+                    <label for="_id">Ticket No</label>
+                    <input type="hidden" formControlName="_id" class="form-control" [ngClass]="{ 'is-invalid': submitted && f._id.errors }" />
+                    <div *ngIf="submitted && f._id.errors" class="invalid-feedback">
+                        <div *ngIf="f._id.errors.required">Enter Ticket No </div>
+                    </div> 
+                </div> -->
+                <div class="form-group">
+                    <label for="ticket_no" style="color: black;font-size:medium;">Ticket No</label>
+                    <input type="text" formControlName="ticket_no" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.ticket_no.errors }" />
+                    <div *ngIf="submitted && f.ticket_no.errors" class="invalid-feedback">
+                        <div *ngIf="f.ticket_no.errors.required" style="color: black;">Enter Ticket No </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="ticket_desc" style="color: black;font-size:medium;">Ticket Description</label>
+                    <input type="text" formControlName="ticket_desc" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.ticket_desc.errors }" />
+                    <div *ngIf="submitted && f.ticket_desc.errors" class="invalid-feedback">
+                        <div *ngIf="f.ticket_desc.errors.required" >Enter Description </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="username" style="color: black; font-size:medium;">username</label>
+                    <input type="text" formControlName="username" value="{{user.username}}" disabled/>  
+                    <!-- <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
+                        <div *ngIf="f.username.errors.required">Enter Description </div>
+                    </div>               -->
+                </div>
+                <div class="form-group">
+                    <button [disabled]="loading" class="btn btn-primary">
+                        <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+                        Save
+                    </button>
+                    <a routerLink="/tickets" class="btn btn-primary" style="margin-left:8px;"> Cancel</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+

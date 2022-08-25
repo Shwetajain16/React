@@ -1,0 +1,64 @@
+<h1>Tickets</h1>
+<!-- <a routerLink="create" class="btn btn-sm btn-success mb-2" data-toggle="modal" data-target="#exampleModal">Add Ticket</a> -->
+
+<div class="row">
+    <div class="search-hero">
+      <input class="form-control" type="text" name="search"  autocomplete="off" placeholder="&#61442; Search Here"  [(ngModel)]="searchText">
+    </div>
+</div>
+<a routerLink="create" class="btn btn-sm btn-success mb-2" data-toggle="modal" data-target="#exampleModal">Add Ticket</a>
+
+<!-- <a routerLink="add" class="btn btn-sm btn-success mb-2">Add User</a> -->
+<table class="table table-striped">
+    <thead>
+        <tr>
+
+            <th style="width: 30%">Ticket No</th>
+            <th style="width: 30%">Ticket description</th>
+            <th style="width: 30%">Updated Date</th>
+
+            <!-- <th style="width: 30%">Username</th> -->
+            
+            <th style="width: 10%"></th>
+        </tr>
+    </thead>
+    <tbody>
+        <!-- <tr *ngFor="let ticket of tickets"> -->
+            <!-- <td>{{ticket.ticket_id}}</td> -->
+            <tr *ngFor="let ticket of tickets | filter:searchText | paginate : {
+                itemsPerPage: tableSize,
+                currentPage: page,
+                totalItems: count
+              }; 
+        let i = index" [class.active]="i == currentIndex">
+            <td>{{ticket.ticket_no}}</td>
+            <td>{{ticket.ticket_desc}}</td>
+            <td>{{ticket.updated_at}}</td>
+         
+           
+            <td style="white-space: nowrap">
+                <button routerLink="edit/{{ticket.id}}" id="update" class="btn btn-sm btn-primary mr-1" [disabled]="ticket.username!==user.username">Edit
+                    <!-- <span *ngIf="ticket.username===user.username" class="spinner-border spinner-border-sm"  [disabled]="!ticket.isDeleting"></span> -->
+
+                </button>
+                <button (click)="deleteTicket(ticket.id)"  class="btn btn-sm btn-danger btn-delete-ticket" [disabled]="ticket.username!==user.username">
+                    <span *ngIf="ticket.isDeleting" class="spinner-border spinner-border-sm"></span> 
+                    <span *ngIf="!ticket.isDeleting">Delete</span>
+                </button>
+            </td>
+        </tr>
+        <tr *ngIf="!tickets">
+            <td colspan="4" class="text-center">
+                <span class="spinner-border spinner-border-lg align-center"></span>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<div class="d-flex justify-content-center">
+    <pagination-controls 
+      responsive="true" 
+      previousLabel="Prev" 
+      nextLabel="Next" 
+      (pageChange)="onTableDataChange($event)">
+    </pagination-controls>
+  </div>

@@ -1,0 +1,50 @@
+﻿
+<style>
+    .navbar{
+            background: linear-gradient(to right, #132471, #11296d, #122d68, #183163, #1e345d, #1b3a5e, #1c405f, #20455f, #1d5065, #205a68, #2a646a, #386e6b);
+            height: 90px;
+            font-size:large;
+            border-radius:50rem;
+            border-color:purple;      
+  }
+  
+</style>
+<!-- nav --> 
+
+<nav class="navbar navbar-expand " *ngIf="user">
+    <div class="navbar-nav" style="width: 100vw; justify-content: space-between;">
+        <div class="nav-item" style="display: flex; align-items: center;">
+            <a class="nav-link" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" style="color:aliceblue;">Home</a>
+            <a class="nav-link" routerLink="/users" routerLinkActive="active" style="color:aliceblue;">Users</a>
+            <!-- <a class="nav-item nav-link" routerLink="/tickets/create" routerLinkActive="active" data-toggle="modal" data-target="#exampleModal">Tickets</a> -->
+            <a class="nav-link" routerLink="/tickets" routerLinkActive="active" data-toggle="modal" data-target="#exampleModal" style="color:aliceblue;">Tickets</a>
+        </div>
+
+        <div class="nav-item" style="width: 100px;">
+
+        </div>
+        
+        <div class="nav-item" style="display: flex;">
+            <a class="nav-link" (click)="logout()" id="logoutid">Logout</a>
+            <span class="nav-link" style="color: aliceblue;"> {{user.firstName}}!</span>
+        </div>
+        
+    
+    </div>
+</nav>
+
+<!-- main app container -->
+<div class="app-container" [ngClass]="{ 'bg-light': user }">
+    <alert></alert>
+    <router-outlet></router-outlet>
+</div>
+
+<!-- credits -->
+<div class="text-center mt-4">
+    <!-- <p>
+        <a href="https://jasonwatmore.com/post/2020/07/18/angular-10-user-registration-and-login-example-tutorial" target="_top">Angular 10 - User Registration and Login Example & Tutorial</a>
+    </p>
+    <p>
+        <a href="https://jasonwatmore.com" target="_top">JasonWatmore.com</a>
+    </p> -->
+</div>
